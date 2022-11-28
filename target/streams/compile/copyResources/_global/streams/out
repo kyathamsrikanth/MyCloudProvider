@@ -1,0 +1,5 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/srikanthkyatham/class401/MyCloudProvider/src/main/resources/logback.xml,/Users/srikanthkyatham/class401/MyCloudProvider/target/scala-3.0.2/classes/logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/srikanthkyatham/class401/MyCloudProvider/src/main/resources/logback-test.xml,/Users/srikanthkyatham/class401/MyCloudProvider/target/scala-3.0.2/classes/logback-test.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/srikanthkyatham/class401/MyCloudProvider/src/main/resources/topology.brite,/Users/srikanthkyatham/class401/MyCloudProvider/target/scala-3.0.2/classes/topology.brite)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/srikanthkyatham/class401/MyCloudProvider/src/main/resources/application.conf,/Users/srikanthkyatham/class401/MyCloudProvider/target/scala-3.0.2/classes/application.conf)[0m
