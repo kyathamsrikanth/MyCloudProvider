@@ -1,4 +1,4 @@
-# AWS Services
+# Cloud Simulations
 ## Homework 3
 
 ### Srikanth Kyatham [UIN - 663943205]
