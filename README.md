@@ -18,11 +18,18 @@ LogFileGenerator : hhttps://github.com/0x1DOCD00D/CS441_Fall2022/blob/main/Homew
 
 ### Cloud Architecture :
 
-![HW2.png](images/HW2.png "Architecture")
+### Overiew :
+![arch.png](images/arch.png "Architecture")
+
+### Network Switches :
+![switches.jpg](images/switches.jpg "Architecture")
+
+### Process Flow :
+![arch2.png](images/arch2.png "Architecture")
 
 ### Steps to run the project.
 1. Clone the repository .
-2. Change Directory to the AWSLambdaFunction/AkkaHttpService root directory in terminal/command prompt.
+2. Change Directory to the MyCloudProvider root directory in terminal/command prompt.
 3. Run below command to build project .
     ```
     sbt clean compile
@@ -31,9 +38,9 @@ LogFileGenerator : hhttps://github.com/0x1DOCD00D/CS441_Fall2022/blob/main/Homew
     ```
     sbt clean run
     ```
-5. Below is the Output.
+5. Below is the Sample Output.
 
-   ![akkaOutput.png](images/akkaOutput.png)
+   ![SampleOutput.png](images/SampleOutput.png)
    ---
 
 
@@ -47,119 +54,35 @@ This Repository contains multiple simulations  with different policies :
 6. **IaaSSimulation**
 7. **FaaSSimulation**
 8. **NetworkSimulatuionBuild**
+9. **VmAllocationPolicyWithTimeZonePreferance**
 
 
 ### SpaceSharedSimulation vs TimeSharedSimulation
 
-Implementation a RESTful service for retrieving log messages
+1. SpaceSharedSimulation : The resource may be partitioned into sets of processors (clusters). Each cluster is allocated to a single cloudlet that is allowed to run to completion
+2. TimeSharedSimulation : More than one Cloudlet may be allocated to a cluster, in which case each Cloudlet runs for some quantum of time before being preempted to allow other jobs to run.
 
-Steps to run the project.
-1. Clone the repository .
-2. Change Directory to the AWSLambdaFunction/AkkaHttpService root directory in terminal/command prompt.
-3. Run below command to build project .
-    ```
-    sbt clean compile
-    ```
-4. Please use below command to run Project.
-    ```
-    sbt clean run
-    ```
-5. Below is the Output.
+Analysis : As we can see Total cost is less for SpaceShared than Time Shared as resourcers are efficently utilized
+Belown is Output :
+### SpaceShared cost : 1702
+![SpaceShared.png](images/SpaceShared.png)
 
-   ![akkaOutput.png](images/akkaOutput.png)
-   ---
+### TimeShared cost : 3020
+![TimeShared.png](images/TimeShared.png)
+### Vm Allocation with Time Zone Preferance
 
-### GRPC
+As we can see in Below image Vm are allocated to the Data center which are closed to respective time Zone :
 
-Client Server Implementation that uses gRPC to invoke a lambda function
-
-Steps to run the project.
-1. Clone the repository .
-2. Change Directory to the AWSLambdaFunction/GRPC root directory in terminal/command prompt.
-3. Run below command to build project .
-    ```
-    sbt clean compile
-    ```
-4. Please use below command to run Project.
-    ```
-    sbt clean run
-    ```
-5. Choose gRPCServer which will start the server which listens to requests on port 60607(Customisable)
-
-   ![grpcServerOut.png](images/grpcServerOut.png)
-
-6. Once Server is Up and Running . Open new terminal and do run again sbt clean run to invoke client program which will make call to grpcserver .
-
-   ![grpcClientOut.png](images/grpcClientOut.png)
-
-### LambdaFunction
-Function Contains algorithm which checks for TimeStamp in O(LogN) and returns MD5-generated hash code from the messages which have designated pattern in given time interval.
-
-**Functionality**:
-1. First will do Binary Search (uses Buffer Reader to go mid-point) to check if given time stamp exits .
-2. If Time Stamp found will return  Status 200 and List of all MD5-generated hash code of logs in given interval which contain designated pattern
-3. If Time Stamp not Found will return Status 400 with message that says logs not found .
-
-**Success Output**:
-
-![200Success.png](images/200Success.png)
-
-**Failed Output**:
-
-![404Error.png](images/404Error.png)
-
-Steps to generate Jar to Deploy to AWS :
-1. Clone the repository .
-2. Change Directory to the AWSLambdaFunction/AkkaHttpService root directory in terminal/command prompt.
-3. Run below command to build project .
-    ```
-    sbt clean compile
-    ```
-4. Use below command to generate assembly jar.
-    ```
-    sbt assembly
-    ```
-5. Jar will be generated in target/scala-2.13/ folder which can deployed to AWS Lambda function.
+![timeZone.png](images/timeZone.png)
 
 
+### Auto Scaling 
 
-### Deploying LogFileGenerator in EC2 Instance.
-
-### LogFileGenerator code
-Repository: https://github.com/kyathamsrikanth/CS441_Fall2022/tree/main/LogFileGenerator
-
-LogFileGenerator will be triggered periodically using cronjob in ec2 instance .
-So LogFileGenerator will update the logs periodically and log file is moved to designated S3 Bucket .
-
-Cronjob script : [cronJob.sh](cronJob.sh)
-
-Steps to deploy  and run LogFileGenerator on EC2 Instance :
-1. Create a EC2 Instance
-2. SSH into EC2 Instance using below command :
-    ```
-    ssh -i "<pem_file>" ec2-user@<EC2_Adress>.compute-1.amazonaws.com
-    ```
-3. Copy all dependencies to EC2 Instance using below command :
-    ```
-    scp -i <pem_file> <dependencies_local_Path>/* ec2-user@<EC2_Adress>.compute-1.amazonaws.com:<EC2_directoryPath>
-    ```
-4. Install Java 11 using below command :
-    ```
-    sudo amazon-linux-extras install java-openjdk11 
-    ```
-5. Install AWS CLI
-    ```
-    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-    unzip awscliv2.zip
-    sudo ./aws/install
-    ```
-6. Upload cronJob.sh to Ec2 Instance and use below command to configure Job to run Periodically:
-    ```
-    cronjob -e
-    ```
-
-* Please watch below video on how to deploy in aws and run above projects : https://drive.google.com/file/d/1beg_vj_EFyOO2oIaF9Mw2p8cK6igk0Bf/view?usp=sharing
-
+As we can see in Below image we can see Vms are Auto scaled based on threshold :
+### Horizontal Scaling :
+![horizontalScaling.png](images/horizontalScaling.png)
+### Vertical Scaling :
+![verticalScaling.png](images/verticalScaling.png)
 
 
 

@@ -1,0 +1,25 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Utils.DataCenterTypeNetworkTest, org.scalatest.tools.Framework$$anon$1@2fd723d2, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Utils.DataCenterTypeSimpleTest, org.scalatest.tools.Framework$$anon$1@2fd723d2, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(networktopologies.TreeNetworkTopologyTest, org.scalatest.tools.Framework$$anon$1@2fd723d2, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Utils.VirtualMachinesTest, org.scalatest.tools.Framework$$anon$1@2fd723d2, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mVirtualMachinesTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- testGetVM[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- testCreateVirtualMachines[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mDataCenterTypeSimpleTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- testGetDataCenter[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- testCreateHost[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mDataCenterTypeNetworkTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- testGetDataCenter[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- testCreateHost[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTreeNetworkTopologyTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- TestCreateNetwork[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 215 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 7[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 4, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 7, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Utils.VirtualMachinesTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	networktopologies.TreeNetworkTopologyTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Utils.DataCenterTypeSimpleTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Utils.DataCenterTypeNetworkTest[0m
