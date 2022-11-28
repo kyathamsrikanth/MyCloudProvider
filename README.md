@@ -85,5 +85,32 @@ As we can see in Below image we can see Vms are Auto scaled based on threshold :
 ![verticalScaling.png](images/verticalScaling.png)
 
 
+### Cloud Services
+
+1. SaaS   - User submits cloudlets cloud provider provides vms
+2. IaaS   - User can request for Vm with custom resource Configuration
+3. PaaS   - User can request for Vm along with cloudlets
+4. FaaS   - User submits cloudlets cloud provider provides vms and Cloud provider handles allocation and
+   auto scaling of resources based on need
+
+### SaaS Cost  : 2480
+![Saas.png](images/Saas.png)
+
+### PaaS Cost  : 10070
+![Paas.png](images/Paas.png)
+
+### IaaS Cost  : 5720
+![Iaas.png](images/Iaas.png)
+
+### FaaS Cost : 2480
+![faas.png](images/faas.png)
+
+
+
+
+
+
+
+
 
 
