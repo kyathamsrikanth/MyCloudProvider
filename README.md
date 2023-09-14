@@ -14,7 +14,7 @@
 - Cloud SimPlus 6.4.3
 
 ### Homework Problem :
-LogFileGenerator : hhttps://github.com/0x1DOCD00D/CS441_Fall2022/blob/main/Homeworks/Homework3.md
+LogFileGenerator : https://github.com/0x1DOCD00D/CS441_Fall2022/blob/main/Homeworks/Homework3.md
 
 ### Cloud Architecture :
 
